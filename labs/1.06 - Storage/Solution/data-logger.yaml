@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: data-logger
+spec:
+  containers:
+    - name: logger
+      image: busybox
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo $(date) >> /data/log.txt; sleep 10; done"]
+      volumeMounts:
+        - name: app-data
+          mountPath: /data
+  volumes:
+    - name: app-data
+      persistentVolumeClaim:
+        claimName: local-storage-pvc

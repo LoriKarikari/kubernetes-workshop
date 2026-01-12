@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: data-logger-azure
+spec:
+  containers:
+    - name: logger
+      image: busybox
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo $(date) >> /data/log.txt; sleep 10; done"]
+      volumeMounts:
+        - name: azure-logs
+          mountPath: /data
+  volumes:
+    - name: azure-logs
+      persistentVolumeClaim:
+        claimName: azure-storage-pvc

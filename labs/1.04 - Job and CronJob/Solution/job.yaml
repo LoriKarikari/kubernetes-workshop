@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: system-scan
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: scanner
+        image: busybox
+        command: ["sh", "-c", "echo Diagnostic scan complete."]

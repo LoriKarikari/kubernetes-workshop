@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azure-storage-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: azure-premium-ssd
+  resources:
+    requests:
+      storage: 5Gi
