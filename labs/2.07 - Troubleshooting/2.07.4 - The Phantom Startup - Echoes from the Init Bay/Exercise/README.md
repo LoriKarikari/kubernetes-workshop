@@ -1,4 +1,4 @@
-# 🧰 Lab 3.09.5 - The Phantom Startup: Echoes from the Init Bay
+# 🧰 Lab 2.07.4 - The Phantom Startup: Echoes from the Init Bay
 
 ## 🎯 Scenario
 

@@ -1,4 +1,4 @@
-# 🧰 Lab 3.09.4 - Silent Credentials: The Forbidden Secret
+# 🧰 Lab 2.07.3 - Silent Credentials: The Forbidden Secret
 
 ## 🎯 Scenario
 

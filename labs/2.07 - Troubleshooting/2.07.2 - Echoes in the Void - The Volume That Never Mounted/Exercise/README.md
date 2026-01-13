@@ -1,4 +1,4 @@
-# 🧰 Lab 3.09.3 - Echoes in the Void: The Volume That Never Mounted
+# 🧰 Lab 2.07.2 - Echoes in the Void: The Volume That Never Mounted
 
 ## 🎯 Scenario
 

@@ -1,4 +1,4 @@
-# 🧰 Lab 3.09.1 - The Silence of Sector 7: Signals Lost in the Void
+# 🧰 Lab 2.07.1 - The Silence of Sector 7: Signals Lost in the Void
 
 ## 🎯 Scenario
 
