@@ -25,7 +25,7 @@ Deploy a hardened node pool to serve as the Star Destroyer fleet platform:
 
 ```bash
 export RESOURCE_GROUP="rg-aks-workshop"
-export CLUSTER_NAME="aks-workshop-cluster"e
+export CLUSTER_NAME="aks-workshop-cluster"
 export NODE_SIZE="Standard_E4ads_v6"
 ```
 
