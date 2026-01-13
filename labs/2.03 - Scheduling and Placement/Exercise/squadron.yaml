@@ -25,20 +25,6 @@ spec:
           limits:
             cpu: "200m"
             memory: "128Mi"
-        envFrom:
-        - configMapRef:
-            name: tie-systems
-        env:
-        - name: TARGETING_AI
-          valueFrom:
-            secretKeyRef:
-              name: tie-weapons
-              key: targetingAI
-        - name: FIRE_CONTROL_KEY
-          valueFrom:
-            secretKeyRef:
-              name: tie-weapons
-              key: fireControlKey
         ports:
         - containerPort: 80
         startupProbe:
