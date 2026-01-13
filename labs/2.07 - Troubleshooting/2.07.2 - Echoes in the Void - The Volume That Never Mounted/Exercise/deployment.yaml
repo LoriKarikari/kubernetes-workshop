@@ -20,7 +20,7 @@ spec:
         - name: POSTGRES_PASSWORD
           value: "password"
         volumeMounts:
-        - mountPath: /var/lib/postgresql/data
+        - mountPath: /var/lib/postgres
           name: database-storage
         ports:
         - containerPort: 5432
