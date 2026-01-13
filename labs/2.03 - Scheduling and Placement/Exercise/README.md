@@ -24,8 +24,8 @@ Secure the new **Star Destroyer node** by:
 Deploy a hardened node pool to serve as the Star Destroyer fleet platform:
 
 ```bash
-export RESOURCE_GROUP="rg-imperial-outpost"
-export CLUSTER_NAME="aks-imperial-core"
+export RESOURCE_GROUP="rg-aks-workshop"
+export CLUSTER_NAME="aks-workshop-cluster"e
 export NODE_SIZE="Standard_E4ads_v6"
 ```
 
