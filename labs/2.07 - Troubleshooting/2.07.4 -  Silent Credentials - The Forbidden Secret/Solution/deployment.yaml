@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-app
+  namespace: secure-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: secure-app
+  template:
+    metadata:
+      labels:
+        app: secure-app
+    spec:
+      serviceAccountName: app-service-account
+      containers:
+      - name: app
+        image: curlimages/curl:8.5.0
+        command: ['sh', '-c']
+        args:
+        - |
+          echo "Requesting secret via Kubernetes API..."
+          TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+          curl -s -H "Authorization: Bearer $TOKEN" \
+               --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt \
+               https://kubernetes.default.svc/api/v1/namespaces/secure-app/secrets/app-credentials
+          echo "Finished API request."
+          sleep 3600

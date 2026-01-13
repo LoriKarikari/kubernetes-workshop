@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azure-datalog-claim
+  finalizers:
+    - protect.imperial.finalizers/delete-authorized
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: imperial-azure-ssd
+  resources:
+    requests:
+      storage: 5Gi

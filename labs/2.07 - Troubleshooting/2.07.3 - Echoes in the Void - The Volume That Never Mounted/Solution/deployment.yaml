@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:13
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "password"
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: database-storage
+        ports:
+        - containerPort: 5432
+      volumes:
+      - name: database-storage
+        persistentVolumeClaim:
+          claimName: database-pvc

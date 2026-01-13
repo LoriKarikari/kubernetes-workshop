@@ -26,7 +26,7 @@ Create a manifest file `frontend-config.yaml` containing these data fields:
 
 **2. Create a Secret**
 
-Create a manifest file `frontend-secrets.yaml` containing the following sensitive data:
+Create a manifest file `frontend-secrets.yaml` containing the following sensitive        data:
 
 - `apiKey`: `my-secret-api-key`
 - `dbPassword`: `Zzhbwkkjikh123`
@@ -48,7 +48,7 @@ The following variable names should be configured in your container spec:
 | `CACHE_ENABLED` | From ConfigMap key `CACHE_ENABLED`|
 | `API_KEY`       | From Secret key `apiKey`          |
 | `DB_PASSWORD`   | From Secret key `dbPassword`      |
-| `APP_MOTD`      | From plain text value in manifest |
+| `APP_MOTD`      | From plain text value in manifest |                                                                              
 
 
 ### Phase III: Deploy and verify
@@ -66,8 +66,6 @@ kubectl get pods
 kubectl exec -it <pod-name> -- printenv | grep LOG
 kubectl exec -it <pod-name> -- printenv | grep DB_PASSWORD
 ```
-
----
 
 ## Resources
 

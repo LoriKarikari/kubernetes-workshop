@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: xwing
+  labels:
+    alliance: Rebel
+spec:
+  containers:
+    - name: xwing
+      image: busybox
+      command: ["sleep", "3600"]

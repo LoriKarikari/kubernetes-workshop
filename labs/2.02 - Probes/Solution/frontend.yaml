@@ -14,22 +14,6 @@ spec:
       labels:
         app: frontend
     spec:
-      serviceAccountName: sa-frontend
-      tolerations:
-      - key: "access"
-        operator: "Equal"
-        value: "restricted"
-        effect: "NoSchedule"
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - frontend
-            topologyKey: "kubernetes.io/hostname"
       containers:
       - image: nginx
         name: web

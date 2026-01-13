@@ -62,20 +62,6 @@ spec:
             limits:
               cpu: "200m"
               memory: "128Mi"
-          envFrom:
-            - configMapRef:
-                name: frontend-config
-          env:
-            - name: API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: frontend-secrets
-                  key: apiKey
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: frontend-secrets
-                  key: dbPassword
           ports:
             - containerPort: 80
           volumeMounts:

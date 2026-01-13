@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-init-script
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS appdb;
+    DROP USER IF EXISTS 'appuser'@'%';
+    CREATE USER 'appuser'@'%' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON appdb.* TO 'appuser'@'%';
+    FLUSH PRIVILEGES;
+  setup.sh: |
+    #!/bin/bash
+    echo "Initializing database..."
+    mysql -h mysql -u root -p$MYSQL_ROOT_PASSWORD < /scripts/init.sql
+    if [ $? -eq 0 ]; then
+      echo "Database initialized successfully"
+      touch /shared/db-ready
+    else
+      echo "Database initialization failed"
+      exit 1
+    fi
