@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: overload-pod
+  labels:
+    app: overload-pod
+spec:
+  containers:
+  - name: overload
+    image: busybox
+    command: ["sh", "-c", "while true; do echo 🛑 Draining starbase cores...; sleep 2; done"]
+    resources:
+      requests:
+        cpu: "10000m" 
